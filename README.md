@@ -1,5 +1,8 @@
-# galaxy_shooter
+# Galaxy Shooter
 Game based on HTML, JavaScript and Babylon.js
+
+## Demo
+[http://galaxy-shooter.czajka-mateusz.pl/](http://galaxy-shooter.czajka-mateusz.pl/)
 
 ## Local setup
 

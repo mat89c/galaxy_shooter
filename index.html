@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <title>Galaxy Shooter</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+
+    <button class="start" id="start">Start Game</button>
+
+    <div class="info-panel"></div>
+    <div class="alert">Turn back</div>
+
+    <div class="hpBar">
+        <div class="heartIcon">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAACMklEQVRIid2WsWtTURSHv18JHUJwKFKKdHBw0v4BDu+BoJMILoKTgyAiiNSCgw4dpIiItOBQEYcigptgFxcHB5PRSVDEQUSCiAQpRUIIIT+H5L3c9/KSViMZvHB5h3vOO9859553z5Mx0xgzU6FME1TKL6jqEmgBsQjMAx3gE6bumFbGtsYBYBE4gt1B+o6pIxqO6GZswzNS1SWk68AF4GgQSB3YBu464lvPliXEKuYUYq5v1wLeYj9wrOeFIFVdRroPvgLMgGCoUPQVfA20AKyDKzk92CDaoBXgsSM6WVDNJ0AvweXCQlQq/ARmcQ6iQLZA/oJ10jGfIVMMOguUQaCCSTKZAyqj9eqb6TDieOI9rLqlfjhBZInsYPkP9HAsEcKq66ZGiQOFLxYA9qVXLiPzbpB60Xbk5P3p3yfuByDxDLPTi8akz8wI1vfS4w/A62GQ+QjeQuoMIky2JJlB5OP1Tcw6+EeaR+aDrXEQ/AITDfY4G3BmFOu7SFvAVUe0hzMCHNHAnEfaznoLyzYPyJR+F2kDWAkhQxmli1UOITaBM+CgMselqCbwCPu2Y+0O+RzVj1T1PGgT+Vyh3yy3DWyA1hzRLPQ3rvH1bmevgm6kpP6Zp0/UApbBTxypPdLXXh1WNVdAd8CXQOWcuoG9BnrouHd5/jWoB6OCfQu4SVJA4hdoGXia3NATg/qwWeAy+B5oF7iIeeU42+AmBqUw+zTSDvAm30X/GWiS8f/9BU0N9BvGfuppG/lGngAAAABJRU5ErkJggg==">
+        </div>
+        <div class="lives"><span class="visible"></span><span class="visible"></span><span class="visible"></span></div>
+    </div>
+
+    <div class="ammo-wrapper">
+        <span class="ammo" id="ammo">40</span>
+        <p>Ammo</p>
+    </div>
+
+    <div class="power-wrapper">
+        <span class="power" id="power">100</span><span> %</span>
+        <p>Power</p>
+    </div>
+
+    <div class="fps-wrapper">
+        <span id="fps"></span><span> FPS</span>
+    </div>
+
+    <aside class="sidebar">
+        <button tabindex="0" class="close-sidebar" id="close">x</button>
+        <div>
+            <div>
+                <span class="keys char keyUp">&#9652;</span>
+                <span class="keys char keyRight">&#9656;</span>
+                <span class="keys char keyDown">&#9662;</span>
+                <span class="keys char keyLeft">&#9666;</span>
+            </div>
+            <div styl="padding-top:10px">
+                - Controls
+            </div>
+        </div>
+
+        <div>
+            <div class="center">
+                <span class="keys">A</span>
+            </div>
+            <div>
+                - Accelerate
+            </div>
+        </div>
+
+        <div>
+            <div class="center">
+                <span class="keys">Z</span>
+            </div>
+            <div>
+                - Slower
+            </div>
+        </div>
+
+        <div>
+            <div class="center">
+                <span class="keys">SPACEBAR</span>
+            </div>
+            <div>
+                - Shoot
+            </div>
+        </div>
+    </aside>
+
+    <div id="joystick"></div>
+    <div class="ship-btn" id="A-Key"></div>
+    <div class="ship-btn" id="Z-Key"></div>
+    <div class="ship-btn" id="X-Key"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babylonjs/3.3.0/babylon.js"></script>
+    <script src="assets/js/VirtualJoystick.js"></script>
+    <script src="assets/js/app.js"></script>
+</body>
+</html>

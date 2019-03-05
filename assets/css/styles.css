@@ -1,0 +1,352 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+canvas#canvas {
+    width: 100vw;
+    height: 100vh;
+    background: #050818;
+    display: block;
+}
+
+.start {
+    position: absolute;
+    top: 35%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    color: #fff;
+    font-weight: 900;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    font-size: 40px;
+}
+
+.start:hover, .start:focus {
+    color: #00c4ff;
+}
+
+.start.hide {
+    display: none;
+}
+
+.info-panel {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 250px;
+    height: 100px;
+    background: rgba(0,0,0,0.5);
+    color: #fff;
+    z-index: 99; 
+    padding: 10px;
+    display: none;
+}
+.info-panel p {
+    margin-bottom: 10px;
+    width: 100%;
+    color: #fff;
+    font-size: 10px;
+    line-height:1;
+}
+
+.alert {
+    position: absolute;
+    top: 20%; 
+    left: 0;
+    right :0;
+    margin: auto;
+    font-size: 40px;
+    color: #fff;
+    z-index: 150;
+    text-align: center;
+    font-weight: 900;
+    z-index: 99;
+    display: none;
+}
+
+.active {
+    display: initial!important;
+}
+
+.hpBar {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    z-index: 99;
+    display: flex;
+    align-items: center;
+    display: none;
+}
+
+.heartIcon {
+    background: transparent;
+    border-radius: 50%;
+    border: 1px solid #00c4ff;
+    display: inline-block;
+}
+
+.heartIcon img {
+    padding: 3px 6px;
+    padding-top: 7px;
+}
+
+.lives {
+    height: 24px;
+    width: 73px;
+    position: relative;
+    z-index: 99;
+    padding: 3px 5px;
+    display: inline-block;
+    border-bottom: 1px solid #00c4ff;
+    padding-left: 15px;
+    padding-right: 10px;
+    margin-left: -4px;
+}
+.lives span{
+    margin-right: 1px;
+    background: #00c4ff;
+    width:15px; height:15px;
+    display: inline-block;
+    transform:skew(-20deg);
+}
+
+.ammo-wrapper {
+    position: absolute;
+    bottom: 20px;
+    left: calc(50% - 100px);
+    text-align: center;
+    color: #fff;
+    display: none;
+}
+
+.ammo, .power {
+    font-size: 30px;
+    font-weight: 900;
+}
+
+.power-wrapper {
+    position: absolute;
+    bottom: 20px;
+    right: calc(50% - 100px);
+    color: #fff;
+    text-align: center;
+    display: none;
+}
+
+.ammo-wrapper p, .power-wrapper p {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.fps-wrapper {
+    position: absolute;
+    right: 20px;
+    top: 130px;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    display: none;
+}
+
+.sidebar {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: #01092c;
+    color: #fff;
+    width: 300px;
+    height: 100vh;
+    z-index: 999;
+    padding: 20px 10px;
+    padding-top: 50px;
+    -webkit-box-shadow: 0px 0px 5px 5px rgba(1,9,44,1);
+    -moz-box-shadow: 0px 0px 5px 5px rgba(1,9,44,1);
+    box-shadow: 0px 0px 5px 5px rgba(1,9,44,1);
+    line-height: 1;
+    display: none;
+}
+
+.sidebar * {
+    color: #fff;
+}
+
+.sidebar > div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    width:100%;
+}
+
+.sidebar > div > div {
+    width: 50%;
+    height: 60px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display:flex; 
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    position: relative;
+}
+
+.keys {
+    padding: 7px;
+    border: 1px solid #fff;
+    font-size: 18px;
+    height: 36px;
+    text-align: center;
+}
+
+.keyUp {
+    position: absolute;
+    top: -19px;
+    left: 41px;
+    width: 32px;
+}
+
+.keyDown {
+    position: absolute;
+    bottom: 0px;
+    left: 41px;
+    width: 32px;
+}
+
+.keyRight {
+    position: absolute;
+    right: 25px;
+    bottom: 0px;
+    width: 32px;
+}
+
+.keyLeft {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 32px;
+}
+
+.close-sidebar {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+}
+.close-sidebar:hover, .close-sidebar:focus, .close-sidebar:active {
+    color: #00c4ff;
+}
+
+.joystick-wrapper {
+    position: absolute;
+    left: 100px;
+    bottom: 100px;
+    width: 200px;
+    height: 200px;
+}
+
+.ship-btn {
+    cursor: pointer;
+    color: #fff;
+    font-size: 32px;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 900;
+    padding: 5px 11px;
+    -webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none
+
+}
+
+#A-Key {
+    border: 4px solid #3366ff;
+    right: 60px;
+    bottom: 75px;
+    width: 50px;
+    height: 50px;
+}
+
+#A-Key:after {
+    content:'A';
+    position: absolute;
+    top: 3px;
+    left: 10px;
+}
+
+#Z-Key {
+    border: 4px solid #3366ff;
+    right: 80px;
+    bottom: 20px;
+    width: 50px;
+    height: 50px;
+}
+
+#Z-Key:after {
+    content: 'Z';
+    position: absolute;
+    top: 3px;
+    left: 10px;
+}
+
+#X-Key {
+    border: 4px solid #ff6600;
+    right: 15px;
+    bottom: 26px;
+    font-size: 36px;
+    width: 55px;
+    height: 55px;
+}
+
+#X-Key:after {
+    content: 'X';
+    position: absolute;
+    top: 1px;
+    left: 10px;
+}
+
+#A-Key:active, #Z-Key:active {
+    color: #ff6600;
+}
+
+#X-Key:active {
+    color: #3366ff;
+}
+
+@media (min-width: 1024px) {
+    .ship-btn {
+        display: none;
+    }
+
+    #joystickBase {
+        display: none;
+    }
+}
+
+@media (max-width: 1024px) {
+    .sidebar {
+        display: none!important;
+    }
+}
+
+@media (max-width: 550px) {
+    .power-wrapper {
+        right: calc(50% - 50px);
+    }
+
+    .ammo-wrapper {
+        left: calc(50% - 50px);
+    }
+}

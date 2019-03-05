@@ -1,0 +1,3 @@
+AddType application/babylon mtl
+AddType application/babylon babylon
+AddType application/babylon manifest

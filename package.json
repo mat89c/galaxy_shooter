@@ -1,0 +1,19 @@
+{
+  "name": "galaxy_shooter",
+  "version": "1.0.0",
+  "description": "Babylon.js game",
+  "main": "index.js",
+  "scripts": {
+    "webpack": "webpack"
+  },
+  "author": "Czajka Mateusz",
+  "license": "MIT",
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-preset-env": "^1.7.0",
+    "webpack": "^4.25.1",
+    "webpack-cli": "^3.1.0"
+  }
+}
